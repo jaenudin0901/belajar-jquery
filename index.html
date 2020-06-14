@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Belajar Jquery</title>
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+	<script src="jquery.js"></script>
+</head>
+<body>
+	<h1>Hello People,</h1>
+	<hr>
+	<div class="boxes_wrap">
+		<div class="boxes">Baris Ke satu</div>
+		<div class="boxes">Baris Ke kedua</div>
+		<div class="boxes">Baris Ke kedua koma lima</div>
+		<div class="boxes">Baris Ke tiga</div>
+</div>
+	<form>
+		<input type="text" id="inputText">
+		<input type="submit">
+	</form>
+
+	<script type="text/javascript">
+		
+		$(document).ready(function(){
+			$('h1').css('color','yellow');
+			$('hr').css('color','yellow');
+			$('.boxes:first').css('color','green');
+			$('.boxes:last').css('color','green');
+				$('.boxes:eq(2)').css('color','green');
+		// event
+		$('h1').click(function(){
+				$('h1').css('color','blue');
+		});
+
+		$('h1').mouseenter(function(){
+				$('h1').css('color','red');
+		});
+
+		$('h1').mouseleave(function(){
+				$('h1').css('color','grey');
+		});
+
+				$('.boxes').mouseenter(function(){
+				$(this).css('color','aqua');
+		});
+
+		// get dan set nilai
+
+		$('form').submit(function(){
+			var tulisan = $('#inputText').val();
+			$('h1').text( tulisan);
+
+
+		// mencegah sifat 
+		event.preventDefault();
+
+		});
+		});
+
+
+	</script>
+
+</body>
+</html>
